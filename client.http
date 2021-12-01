@@ -1,0 +1,62 @@
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "duongvu",
+  "password": "12345"
+}
+###
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTYzODMyMDgxNiwiZXhwIjoxNjM4NDA3MjE2fQ.QnN5D6k3LqTtkbo-3Vr82j2hZ32s5O431IlMxLvb0-4
+
+{
+  "title": "learn react",
+  "description": "framework reactjs",
+  "url": "react.org"
+}
+###
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTYzODMyMDgxNiwiZXhwIjoxNjM4NDA3MjE2fQ.QnN5D6k3LqTtkbo-3Vr82j2hZ32s5O431IlMxLvb0-4
+
+###
+PUT http://localhost:5000/api/posts/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTYzODI5Mjk5MiwiZXhwIjoxNjM4Mzc5MzkyfQ.avwVdvOpcsEiYw9vi1Y-u2eBJBp4QUcwfxrckfirxoc
+Content-Type: application/json
+
+{ 
+  "title": "Vuejs",
+  "description": "framework vuejs",
+  "url": "vuejs.org",
+  "status": "LEARNING"
+}
+
+###
+DELETE http://localhost:5000/api/posts/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTYzODMyMDgxNiwiZXhwIjoxNjM4NDA3MjE2fQ.QnN5D6k3LqTtkbo-3Vr82j2hZ32s5O431IlMxLvb0-4
+
+###
+PUT http://localhost:5000/api/auth/changepassword
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTYzODMyMDgxNiwiZXhwIjoxNjM4NDA3MjE2fQ.QnN5D6k3LqTtkbo-3Vr82j2hZ32s5O431IlMxLvb0-4
+Content-Type: application/json
+
+{
+  "password": "1234",
+  "confirmpassword": "1234"
+}
+
+###
+POST http://localhost:5000/api/auth/forgotpassword
+Content-Type: application/json
+
+{
+  "email": "manhduong240101@gmail.com"
+}
+###
+PUT http://localhost:5000/api/auth/resetpassword?token=c621d44f-96ca-4544-ac80-6eb4b7a84e6c&userId=3
+Content-Type: application/json
+
+{
+  "password": "12345",
+  "confirmpassword": "12345"
+}

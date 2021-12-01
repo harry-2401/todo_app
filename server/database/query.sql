@@ -6,6 +6,7 @@ CREATE TABLE users (
   UNIQUE(username),
   CONSTRAINT pk_user PRIMARY KEY(ID)
 );
+ALTER TABLE "users" ADD email varchar(30);
 
 CREATE TABLE posts (
   ID SERIAL NOT NULL,
