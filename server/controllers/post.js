@@ -5,7 +5,6 @@ const {
   UPDATE_POST_BY_ID,
   DELETE_POST,
 } = require("../database/query");
-const { post } = require("../routes/post");
 
 const createPost = async (req, res) => {
   const { title, description, url, status } = req.body;
